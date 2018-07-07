@@ -1,0 +1,117 @@
+.container h3{
+    color: black;
+}
+
+.container1{
+    background-color: white;
+    border: 15px solid purple;
+}
+
+#btn1 {
+    background-color: rgb(57, 45, 235);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:auto;
+    
+}
+
+#btn2 {
+    background-color: rgb(57, 45, 235);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:auto;
+    
+}
+
+
+#sub , #sub1{
+    background-color: orangered;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .container{
+      background-color: white;
+  }
+  
+  .btn{
+      
+      margin-top: 30px;
+      margin-right: 20px;
+      float: right;
+      
+  }
+
+  .container1{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+  }
+  @media(max-width: 373px){
+        .submit{
+            display: none !important;
+        }
+        .add{
+            display: inline-block !important;
+        }
+  }
+  .text-white{
+      color: #fff;
+  }
+  .bg-orange{
+      background-color: orangered;
+  }
+  .add{
+      height: 60px;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+  }
+  .btn{
+      flex : 3;
+  }
+
+  @media (max-width:600px){
+      .title{
+          display: none;
+      }
+  }
+
+  @media(max-width: 1600px){
+    .formcs{
+        margin-left: 350px;
+    }
+}
+
+
+@media (max-width:600px){
+    .formcs{
+       margin: 0px;
+    }
+}

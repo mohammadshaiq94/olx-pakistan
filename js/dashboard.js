@@ -1,3 +1,4 @@
+
 console.log('runnign');
 
 const db = firebase.database();
@@ -126,37 +127,3 @@ const printData = (array) => {
     });
 
 }
-
-
-
-
-
-
-
-
-let file = document.getElementById("file");
-
-function send(){
-    var selectedFile = file.files[0];
-    console.log(selectedFile);
-
-    var fileName = selectedFile.name;
-
-    var storageRef = firebase.storage().ref("/images/" + fileName);
-    var uploadTask = storageRef.put(selectedFile);
-
-    uploadTask.on("state_changed",function(snapshot){
-
-    },function(err){},
-    function(){
-        console.log(uploadTask.snapshot);
-        // console.log(snapshot);
-        var downloadURL = uploadTask.snapshot.downloadURL;
-        console.log(downloadURL)
-    }
-)
-}
-
-
-
-

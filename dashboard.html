@@ -1,25 +1,50 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
 
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
     <title>Document</title>
 
 
 </head>
 
 <body>
-    <header class="bg-secondary py-2 text-center text-white">
+
+
+
+        <div class="container1">
+                <div>
+                    <img src="img/olx.png" class="img-responsive" width="80" height="60">
+        
+                    <h5 class="title">Pakistan's Largest Marketplace</h5>
+                </div>
+                <div>
+                    <button class="btn submit" id="sub">Submit an Ad</button>
+                    <button class="btn">
+                        <i class="fas fa-user-alt"></i> My Account
+                    </button>
+                </div>
+            </div>
+        
+        
+        
+            <header class="py-2 text-center bg-light text-white">
+                <div class="container">
+                    <h3>OLX PAKISTAN</h3>
+                </div>
+            </header>
+    <header class="bg-light py-2 text-center text-white">
         <div class="container">
-            <h2>Dashboard</h2>
-            <button class="btn btn-scondary btn-lg mt-3 float-right" id="logout-btn">Logout</button>
+            <button class="btn btn-primary btn-lg mt-3 float-right" id="logout-btn">Logout</button>
         </div>
     </header>
 
@@ -33,7 +58,7 @@
                         <h4 class="text-center"> Add Product</h4>
                     </div>
                     <div class="card-footer">
-                        <button data-toggle="modal" data-target="#addProduct" class="btn  btn-block btn-secondary">Lets Start</button>
+                        <button data-toggle="modal" data-target="#addProduct" class="btn  btn-block btn-primary">Add products Here</button>
                     </div>
                 </div>
             </div>
@@ -42,51 +67,33 @@
 
     <div class="container my-5">
         <input type="text" class="form-control" id="searchbyname" placeholder="search by product name" />
-        <button onclick="searchAddByname()" class="btn btn-dark">Search</button>
+        <button onclick="searchAddByname()" class="btn btn-primary">Search</button>
         <br>
+        <br>
+        <br>
+        <br>
+       
+        
+
         <select class="form-control" oninput="searchByCatagory()" id="catagoryForSearch">
-            <option value="selected">Select Catagory</option>
-                <option value="cars">Mobiles</option>
-                <option value="phones">vehicles</option>
-                <option value="homes">bikes</option>
-                <option value="cars">property for sale</option>
-                <option value="phones">property for rent</option>
-                <option value="homes">jobs</option>
-                <option value="cars">services</option>
-                <option value="phones">future and home decor</option>
-                <option value="homes">services</option>
+                <option value="-----Select Catagory-----">-----Select Catagory-----</option>
+                <option value="Mobiles">Mobiles</option>
+                <option value="Bikes">Bikes</option>
+                <option value="Cars">Cars</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Laptops">Laptops</option>
+                <option value="Jobs">Jobs</option>
+                <option value="Animals">Animals</option>
+                <option value="Homes">Homes</option>
+                <option value="Books">Books</option>
+                <option value="Kids">Kids</option>
+                <option value="Services">Services</option>
+                <option value="Fashion">Fashion</option>
         </select>
     </div>
 
-    <form id="addProductForm">
-        <div class="modal-body">
-            <input type="text" required id="name" class="form-control" placeholder="name">
-            <br>
-            <select class="form-control" id="catagory">
-                <option value="selected">Select Catagory</option>
-                <option value="cars">Mobiles</option>
-                <option value="phones">vehicles</option>
-                <option value="homes">bikes</option>
-                <option value="cars">property for sale</option>
-                <option value="phones">property for rent</option>
-                <option value="homes">jobs</option>
-                <option value="cars">services</option>
-                <option value="phones">future and home decor</option>
-                <option value="homes">services</option>
-            </select>
 
-            <br>
-            <!-- <input type="file" required id="title" class="form-control" placeholder="job title"> -->
-            <!-- <br> -->
-        </div>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-secondary">Add</button>
-            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-        </div>
-    </form>
-
-
-    <table id="container" class="table table-secondary">
+    <table id="container" class="table bg-primary" >
     </table>
 
 
@@ -99,46 +106,70 @@
                         <h5>Add Product</h5>
                     </div>
                 </div>
-                <!-- Paste modal here -->
 
+                <form id="addProductForm">
+                    <div class="modal-body">
+                        <input type="text" required id="name" class="form-control" placeholder="name">
+                        <br>
+                        <select class="form-control" id="catagory">
+                            <option value="-----Select Catagory-----">-----Select Catagory-----</option>
+                            <option value="Mobiles">Mobiles</option>
+                            <option value="Bikes">Bikes</option>
+                            <option value="Cars">Cars</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Laptops">Laptops</option>
+                            <option value="Jobs">Jobs</option>
+                            <option value="Animals">Animals</option>
+                            <option value="Homes">Homes</option>
+                            <option value="Books">Books</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Services">Services</option>
+                            <option value="Fashion">Fashion</option>
+                        </select>
 
+                        <br>
+                        <!-- <input type="file" required id="title" class="form-control" placeholder="job title"> -->
+                        <!-- <br> -->
+                        <input type="text" required id="title" class="form-control" placeholder="title">
+                        <br>
+                        <input type="text" required id="phone_number" class="form-control" placeholder="phone number +92: ....">
+                        <br>
+                        <input type="text" required id="address" class="form-control" placeholder="Address">
+                        <br>
+                        <input type="number" id="price" placeholder="Price" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-primary">Add</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
 
-   
-
-
-
-
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDU8AKmCLJDyLtuljRd0lx0Ubwm6wDkpp8",
-    authDomain: "olx-pakistan-e99ae.firebaseapp.com",
-    databaseURL: "https://olx-pakistan-e99ae.firebaseio.com",
-    projectId: "olx-pakistan-e99ae",
-    storageBucket: "olx-pakistan-e99ae.appspot.com",
-    messagingSenderId: "99285581062"
-  };
-  firebase.initializeApp(config);
-</script>
-        
-    
+        var config = {
+            apiKey: "AIzaSyDU8AKmCLJDyLtuljRd0lx0Ubwm6wDkpp8",
+            authDomain: "olx-pakistan-e99ae.firebaseapp.com",
+            databaseURL: "https://olx-pakistan-e99ae.firebaseio.com",
+            projectId: "olx-pakistan-e99ae",
+            storageBucket: "olx-pakistan-e99ae.appspot.com",
+            messagingSenderId: "99285581062"
+        };
+        firebase.initializeApp(config);
+
+        var auth = firebase.auth();
+    </script>
     <script>
-
-
         document.getElementById('logout-btn').addEventListener('click', () => {
-            firebase.auth().signOut().then(() => {
+            auth.signOut().then(() => {
                 localStorage.removeItem('user');
-                window.location.href = "index.html";
+                window.location.href = "./index.html";
             });
         });
-
     </script>
     <script src="./js/dashboard.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -147,6 +178,96 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5" >
+    
+            <!-- Grid row -->
+            <div class="row mt-3 dark-grey-text">
+    
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+    
+                    <!-- Content -->
+                    <div>
+                        <img src="img/olx.png" class="img-responsive" width="80" height="60">
+    
+                        <h5 class="title">Pakistan's Largest Marketplace</h5>
+                    </div>
+    
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">location map</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+    
+    
+                        <p>
+                            <a class="dark-grey-text" href="#!">popular searches</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">sitemap</a>
+                        </p>
+    
+    
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">terms of use</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="dark-grey-text" href="#!">help and contact us</a>
+                    </p>
+    
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Business Packages (featured ads, advertising)</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> help@olx.com.pk</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i>080010101 (9:30am to 6:30pm)</p>
+    
+    
+                </div>
+                <!-- Grid column -->
+    
+            </div>
+            <!-- Grid row -->
+    
+    
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright:
+                <a class="dark-grey-text" href="file:///C:/Users/786%20Traders/Desktop/olx-pakistan-01/signIN.html"> olxpakistan.com</a>
+            </div>
+            <!-- Copyright -->
+    
+            </footer>
+            <!-- Footer -->
+
 
 </body>
 

@@ -68,6 +68,28 @@
       
   }
 
+
+
+.column {
+    
+    width: 15%;
+    padding: 5px;
+    margin-left: 250px;
+  }
+  
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+  
   .container1{
       display: flex;
       justify-content: space-around;
@@ -115,3 +137,5 @@
        margin: 0px;
     }
 }
+
+

@@ -16,7 +16,6 @@
     <title>Document</title>
 </head>
 
-
 <body class="bg-light">
 
     <div class="container1">
@@ -26,7 +25,8 @@
             <h5 class="title">Pakistan's Largest Marketplace</h5>
         </div>
         <div>
-            <button class="btn"  onClick="window.location='index.html'">
+            <button class="btn submit" id="sub" onClick="window.location='image.html'">Submit an Ad</button>
+            <button class="btn" onClick="window.location='index.html'">
                 <i class="fas fa-user-alt"></i> My Account
             </button>
         </div>
@@ -40,75 +40,67 @@
         </div>
     </header>
 
-    
+    <div>
+        <div class="w-100 text-white bg-orange add mx-3">Submit An Ad</div>
+    </div>
 
-    <form onsubmit="sumbitAnAdd(event)" class="formcs">
-        <input type="text" class="form-control col-lg-8 col-sm-12  margin-fileds mt-2" id="txtAdTitle" placeholder="Ad Title....."
-            required="required">
-        <br/>
-        <br/>
-        <select class="form-control col-lg-8 col-sm-12  float-left margin-fileds mt-2" required="required" id="selectCatagory">
-            <option value="-----Select Catagory-----">-----Select Catagory-----</option>
-            <option value="Mobiles">Mobiles</option>
-            <option value="Bikes">Bikes</option>
-            <option value="Cars">Cars</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Laptops">Laptops</option>
-            <option value="Jobs">Jobs</option>
-            <option value="Animals">Animals</option>
-            <option value="Homes">Homes</option>
-            <option value="Books">Books</option>
-            <option value="Kids">Kids</option>
-            <option value="Services">Services</option>
-            <option value="Fashion">Fashion</option>
-        </select>
-        <br/>
-        <br/>
-        <textarea class="form-control col-lg-8 col-sm-12 float-left margin-fileds mt-2 textArea" placeholder="Ad Description....."
-            required="required" id="txtAdDescription">
-    </textarea>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
 
-        <input type="file" class="btn btn-primary float-left choose-file mt-2" multiple="multiple" required="required" id="selectFile">
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+   
 
-        <input type="text" class="form-control col-lg-8 col-sm-12 float-left margin-fileds mt-2" id="txtName" placeholder="Name....."
-            required="required">
-        <br/>
-        <br/>
-        <input type="number" class="form-control col-lg-8 col-sm-12 float-left margin-fileds mt-2" id="txtPhone" placeholder="Phone....."
-            required="required">
-        <br/>
-        <br/>
-        <input type="text" class="form-control col-lg-8 col-sm-12 float-left margin-fileds mt-2" id="txtCity" placeholder="City....."
-            required="required">
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <input type="submit" value="Submit" class="btn btn-warning btnSubmit mt-2" style="float:left;">
-    </form>
+        <div class="row">
+            <div class="column">
+              <img src="img/1.png" class="img-responsive" width="80" height="60">
+            </div>
+            <div class="column">
+                <img src="img/2.png" class="img-responsive" width="80" height="60">
+              </div> 
+              <div class="column">
+                <img src="img/3.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/4.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/5.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/6.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/7.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/8.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/9.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/10.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/11.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/12.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/13.png" class="img-responsive" width="80" height="60">
+              </div>
+              <div class="column">
+                <img src="img/14.png" class="img-responsive" width="80" height="60">
+              </div>
+            
 
 
 
+    </div>
 
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
+
     <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5" >
+    <div class="container text-center text-md-left mt-5">
 
         <!-- Grid row -->
         <div class="row mt-3 dark-grey-text">
@@ -187,15 +179,3 @@
 
         </footer>
         <!-- Footer -->
-
-
-
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-
-
-        </script>
-        <script src="js/image.js"></script>
-
-</body>
-
-</html>
